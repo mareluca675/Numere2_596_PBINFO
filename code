@@ -1,0 +1,40 @@
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+    ifstream cin("numere2.in");
+    ofstream cout("numere2.out");
+    
+    int n, m = 0, i, j, vec[25001], a, b, z = 0;
+    
+    cin >> n;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        cin >> a;
+        
+        if(a != vec[m])
+        {
+            m ++;
+            vec[m] = a; 
+        }
+        else
+        {
+            z ++;
+            m --;
+        }
+        
+        b = a;
+    }
+    
+    cout << z << '\n';
+    
+    for(i = 1; i <= m; i ++)
+    {
+        cout << vec[i] << ' ';
+    }
+
+    return 0;
+}
